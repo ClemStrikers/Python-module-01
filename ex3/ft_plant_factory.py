@@ -25,7 +25,7 @@ def ft_plant_factory():
         
         print(f"Created: {new_plant.name} ({new_plant.height}cm, {new_plant.age} days)")
 
-    print(f"Total plants created: {len(created_plants)}")
+    print(f"\nTotal plants created: {len(created_plants)}")
 
 if __name__ == "__main__":
     ft_plant_factory()

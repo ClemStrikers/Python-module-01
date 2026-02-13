@@ -97,7 +97,7 @@ if __name__ == "__main__":
     alice_garden.help_all_grow(1)
     alice_garden.generate_report()
     is_valid = GardenManager.validate_height(10)
-    print(f"Height validation test: {is_valid}")
+    print(f"\nHeight validation test: {is_valid}")
 
     alice_score = GardenManager.GardenStats.calculate_score(alice_garden.plants)
     bob_score = 92 

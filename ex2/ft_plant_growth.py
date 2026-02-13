@@ -25,7 +25,7 @@ def simulate_week(plants):
             p.grow(1)       
             p.age_one_day()
 
-    print("\n=== Day 7 ===")
+    print("=== Day 7 ===")
     for i in range(len(plants)):
         p = plants[i]
         print(p.get_info())

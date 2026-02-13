@@ -27,7 +27,7 @@ class SecurePlant:
         return self._age
 
     def display_status(self):
-        print(f"Current plant: {self.name} ({self._height}cm, {self._age} days)")
+        print(f"\nCurrent plant: {self.name} ({self._height}cm, {self._age} days)")
 
 if __name__ == "__main__":
     print("=== Garden Security System ===") 

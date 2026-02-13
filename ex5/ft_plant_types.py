@@ -30,23 +30,23 @@ def main():
     
     rose = Flower("Rose", 25, 30, "red")
     sunflower = Flower("Sunflower", 80, 45, "yellow")
-    print(f"{rose.name} (Flower): {rose.height}cm, {rose.age} days, {rose.color} color")
+    print(f"\n{rose.name} (Flower): {rose.height}cm, {rose.age} days, {rose.color} color")
     rose.bloom()
-    print(f"{sunflower.name} (Flower): {sunflower.height}cm, {sunflower.age} days, {sunflower.color} color")
+    print(f"\n{sunflower.name} (Flower): {sunflower.height}cm, {sunflower.age} days, {sunflower.color} color")
     sunflower.bloom()
 
     oak = Tree("Oak", 500, 1825, 50)
     cherry_tree = Tree("Cherry tree", 200, 730, 35)
-    print(f"{oak.name} (Tree): {oak.height}cm, {oak.age} days, {oak.trunk_diameter}cm diameter")
+    print(f"\n{oak.name} (Tree): {oak.height}cm, {oak.age} days, {oak.trunk_diameter}cm diameter")
     oak.produce_shade()
-    print(f"{cherry_tree.name} (Tree): {cherry_tree.height}cm, {cherry_tree.age} days, {cherry_tree.trunk_diameter}cm diameter")
+    print(f"\n{cherry_tree.name} (Tree): {cherry_tree.height}cm, {cherry_tree.age} days, {cherry_tree.trunk_diameter}cm diameter")
     cherry_tree.produce_shade()
 
     tomato = Vegetable("Tomato", 80, 90, "summer", "vitamin C")
     carrot = Vegetable("Carrot", 20, 60, "autumn", "beta-carotene")
-    print(f"{tomato.name} (Vegetable): {tomato.height}cm, {tomato.age} days, {tomato.harvest_season} harvest")
+    print(f"\n{tomato.name} (Vegetable): {tomato.height}cm, {tomato.age} days, {tomato.harvest_season} harvest")
     print(f"{tomato.name} is rich in {tomato.nutritional_value}")
-    print(f"{carrot.name} (Vegetable): {carrot.height}cm, {carrot.age} days, {carrot.harvest_season} harvest")
+    print(f"\n{carrot.name} (Vegetable): {carrot.height}cm, {carrot.age} days, {carrot.harvest_season} harvest")
     print(f"{carrot.name} is rich in {carrot.nutritional_value}")
 
 if __name__ == "__main__":
