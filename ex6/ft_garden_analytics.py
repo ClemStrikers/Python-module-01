@@ -7,6 +7,7 @@ class Plant:
         self.height += amount
         print(f"{self.name} grew {amount}cm")
 
+
 class FloweringPlant(Plant):
     def __init__(self, name, height, color):
         super().__init__(name, height)
@@ -14,6 +15,7 @@ class FloweringPlant(Plant):
 
     def get_info(self):
         return f"{self.name}: {self.height}cm, {self.color} flowers (blooming)"
+
 
 class PrizeFlower(FloweringPlant):
     def __init__(self, name, height, color, points):
@@ -23,9 +25,11 @@ class PrizeFlower(FloweringPlant):
     def get_info(self):
         return f"{super().get_info()}, Prize points: {self.points}"
 
+
 class GardenManager:
-    
+
     _total_gardens = 0
+
     class GardenStats:
         @staticmethod
         def calculate_score(plants):
@@ -82,10 +86,11 @@ class GardenManager:
                 print(f"- {p.get_info()}")
             else:
                 print(f"- {p.name}: {p.height}cm")
-        
+
         reg, flow, prize = self.GardenStats.count_types(self.plants)
         print(f"Plants added: {len(self.plants)}, Total growth: {len(self.plants)}cm")
         print(f"Plant types: {reg} regular, {flow} flowering, {prize} prize flowers")
+
 
 if __name__ == "__main__":
     print("=== Garden Management System Demo ===")
@@ -100,7 +105,7 @@ if __name__ == "__main__":
     print(f"\nHeight validation test: {is_valid}")
 
     alice_score = GardenManager.GardenStats.calculate_score(alice_garden.plants)
-    bob_score = 92 
+    bob_score = 92
     print(f"Garden scores - Alice: {alice_score}, Bob: {bob_score}")
 
     print(f"Total gardens managed: {GardenManager.create_garden_network()}")

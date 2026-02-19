@@ -4,6 +4,7 @@ class Plant:
         self.height = height
         self.age = age
 
+
 def main():
     rose = Plant("Rose", 25, 30)
     sunflower = Plant("Sunflower", 80, 45)
@@ -16,6 +17,7 @@ def main():
     for i in range(len(garden)):
         plant = garden[i]
         print(f"{plant.name}: {plant.height}cm, {plant.age} days old")
+
 
 if __name__ == "__main__":
     main()

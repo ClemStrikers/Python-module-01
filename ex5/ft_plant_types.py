@@ -4,30 +4,36 @@ class Plant:
         self.height = height
         self.age = age
 
+
 class Flower(Plant):
     def __init__(self, name: str, height: int, age: int, color: str):
         super().__init__(name, height, age)
         self.color = color
+
     def bloom(self):
         print(f"{self.name} is blooming beautifully!")
+
 
 class Tree(Plant):
     def __init__(self, name: str, height: int, age: int, trunk_diameter):
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
+
     def produce_shade(self):
         shade_area = self.trunk_diameter * 1.56
         print(f"{self.name} provides {int(shade_area)} square meters of shade")
 
+
 class Vegetable(Plant):
-    def __init__(self, name: str, height: int, age: int,  harvest_season, nutritional_value):
+    def __init__(self, name: str, height: int, age: int,  har_season, n_value):
         super().__init__(name, height, age)
-        self.harvest_season = harvest_season
-        self.nutritional_value = nutritional_value
+        self.harvest_season = har_season
+        self.nutritional_value = n_value
+
 
 def main():
     print("=== Garden Plant Types ===")
-    
+
     rose = Flower("Rose", 25, 30, "red")
     sunflower = Flower("Sunflower", 80, 45, "yellow")
     print(f"\n{rose.name} (Flower): {rose.height}cm, {rose.age} days, {rose.color} color")
@@ -48,6 +54,7 @@ def main():
     print(f"{tomato.name} is rich in {tomato.nutritional_value}")
     print(f"\n{carrot.name} (Vegetable): {carrot.height}cm, {carrot.age} days, {carrot.harvest_season} harvest")
     print(f"{carrot.name} is rich in {carrot.nutritional_value}")
+
 
 if __name__ == "__main__":
     main()
