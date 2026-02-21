@@ -88,8 +88,10 @@ class GardenManager:
                 print(f"- {p.name}: {p.height}cm")
 
         reg, flow, prize = self.GardenStats.count_types(self.plants)
-        print(f"Plants added: {len(self.plants)}, Total growth: {len(self.plants)}cm")
-        print(f"Plant types: {reg} regular, {flow} flowering, {prize} prize flowers")
+        print(f"Plants added: {len(self.plants)},"
+              f"Total growth: {len(self.plants)}cm")
+        print(f"Plant types: {reg} regular,"
+              f"{flow} flowering, {prize} prize flowers")
 
 
 if __name__ == "__main__":
@@ -104,7 +106,8 @@ if __name__ == "__main__":
     is_valid = GardenManager.validate_height(10)
     print(f"\nHeight validation test: {is_valid}")
 
-    alice_score = GardenManager.GardenStats.calculate_score(alice_garden.plants)
+    alice_score =\
+        GardenManager.GardenStats.calculate_score(alice_garden.plants)
     bob_score = 92
     print(f"Garden scores - Alice: {alice_score}, Bob: {bob_score}")
 
