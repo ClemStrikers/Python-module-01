@@ -24,7 +24,8 @@ def ft_plant_factory():
         n_plant = Plant(name, height, age)
         created_plants.append(n_plant)
 
-        print(f"Created:{n_plant.name} {n_plant.height}cm, {n_plant.age} days")
+        print(f"Created: {n_plant.name} "
+              f"({n_plant.height}cm, {n_plant.age} days)")
 
     print(f"\nTotal plants created: {len(created_plants)}")
 

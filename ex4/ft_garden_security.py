@@ -6,7 +6,8 @@ class SecurePlant:
 
     def set_height(self, value: int):
         if value < 0:
-            print(f"Invalid operation attempted: height {value}cm [REJECTED]")
+            print(f"\nInvalid operation attempted: "
+                  f"height {value}cm [REJECTED]")
             print("Security: Negative height rejected")
         else:
             self._height = value
@@ -14,7 +15,8 @@ class SecurePlant:
 
     def set_age(self, value: int):
         if value < 0:
-            print(f"Invalid operation attempted: age {value} days [REJECTED]")
+            print(f"\nInvalid operation attempted: "
+                  f"age {value} days [REJECTED]")
             print("Security: Negative age rejected")
         else:
             self._age = value
@@ -27,7 +29,8 @@ class SecurePlant:
         return self._age
 
     def display_status(self):
-        print(f"Current plant:{self.name} ({self._height}cm,{self._age} days)")
+        print(f"\nCurrent plant:{self.name} "
+              f" ({self._height}cm, {self._age} days)")
 
 
 if __name__ == "__main__":

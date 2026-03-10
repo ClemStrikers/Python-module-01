@@ -64,7 +64,7 @@ class GardenManager:
         print(f"Added {plant.name} to {self.owner_name}'s garden")
 
     def help_all_grow(self, amount=1):
-        print(f"{self.owner_name} is helping all plants grow...")
+        print(f"\n{self.owner_name} is helping all plants grow...")
         for p in self.plants:
             p.grow(amount)
 
@@ -79,7 +79,7 @@ class GardenManager:
         return h > 0
 
     def generate_report(self):
-        print(f"=== {self.owner_name}'s Garden Report ===")
+        print(f"\n=== {self.owner_name}'s Garden Report ===")
         print("Plants in garden:")
         for p in self.plants:
             if hasattr(p, 'get_info'):
@@ -88,14 +88,14 @@ class GardenManager:
                 print(f"- {p.name}: {p.height}cm")
 
         reg, flow, prize = self.GardenStats.count_types(self.plants)
-        print(f"Plants added: {len(self.plants)},"
+        print(f"\nPlants added: {len(self.plants)},"
               f"Total growth: {len(self.plants)}cm")
         print(f"Plant types: {reg} regular,"
               f"{flow} flowering, {prize} prize flowers")
 
 
 if __name__ == "__main__":
-    print("=== Garden Management System Demo ===")
+    print("=== Garden Management System Demo ===\n")
     alice_garden = GardenManager("Alice")
     bob_garden = GardenManager("Bob")
     alice_garden.add_plant(Plant("Oak Tree", 100))
