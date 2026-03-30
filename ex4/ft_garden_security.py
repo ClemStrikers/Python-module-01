@@ -1,43 +1,57 @@
-class SecurePlant:
-    def __init__(self, name: str):
-        self.name = name
-        self._height = 0
-        self._age = 0
+class Plant:
 
-    def set_height(self, value: int):
-        if value < 0:
-            print(f"\nInvalid operation attempted: "
-                  f"height {value}cm [REJECTED]")
-            print("Security: Negative height rejected")
+    def __init__(self, name: str, height: float, age: int) -> None:
+        self._name: str = name
+        if height < 0:
+            print(f"{self._name}: Error, height can't be negative")
+            self._height: float = 0.0
         else:
-            self._height = value
-            print(f"Height updated: {value}cm [OK]")
-
-    def set_age(self, value: int):
-        if value < 0:
-            print(f"\nInvalid operation attempted: "
-                  f"age {value} days [REJECTED]")
-            print("Security: Negative age rejected")
+            self._height = height
+        if age < 0:
+            print(f"{self._name}: Error, age can't be negative")
+            self._age: int = 0
         else:
-            self._age = value
-            print(f"Age updated: {value} days [OK]")
+            self._age = age
 
-    def get_height(self) -> int:
+    def get_height(self) -> float:
         return self._height
 
     def get_age(self) -> int:
         return self._age
 
-    def display_status(self):
-        print(f"\nCurrent plant:{self.name} "
-              f" ({self._height}cm, {self._age} days)")
+    def set_height(self, value: float) -> None:
+        if value < 0:
+            print(f"{self._name}: Error, height can't be negative")
+            print("Height update rejected")
+        else:
+            self._height = value
+
+    def set_age(self, value: int) -> None:
+        if value < 0:
+            print(f"{self._name}: Error, age can't be negative")
+            print("Age update rejected")
+        else:
+            self._age = value
+
+    def show(self) -> None:
+        h_round: float = round(self._height, 1)
+        print(f"{self._name}: {h_round}cm, {self._age} days old")
+
+
+def run_security_check() -> None:
+    print("=== Garden Security System ===")
+
+    rose: Plant = Plant("Rose", 15.0, 10)
+    print(f"Plant created: {rose.get_height()}cm, {rose.get_age()} days old")
+    rose.set_height(25.0)
+    print(f"Height updated: {round(rose.get_height())}cm")
+    rose.set_age(30)
+    print(f"Age updated: {rose.get_age()} days")
+    rose.set_height(-5.0)
+    rose.set_age(-1)
+    print("Current state: ", end="")
+    rose.show()
 
 
 if __name__ == "__main__":
-    print("=== Garden Security System ===")
-    rose = SecurePlant("Rose")
-    print(f"Plant created: {rose.name}")
-    rose.set_height(25)
-    rose.set_age(30)
-    rose.set_height(-5)
-    rose.display_status()
+    run_security_check()

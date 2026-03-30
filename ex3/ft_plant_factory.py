@@ -1,34 +1,36 @@
+from typing import List
+
+
 class Plant:
-    def __init__(self, name: str, height: int, age: int):
-        self.name = name
-        self.height = height
-        self.age = age
+
+    def __init__(self, name: str, height: float, age_days: int) -> None:
+
+        self.name: str = name
+        self.height: float = height
+        self.age_days: int = age_days
+
+    def grow(self, amount: float = 0.5) -> None:
+        self.height += amount
+
+    def show(self) -> None:
+        h_round: float = round(self.height, 1)
+        print(f"Created: {self.name}: {h_round}cm, {self.age_days} days old")
 
 
-def ft_plant_factory():
-    plant_data = [
-        ("Rose", 25, 30),
-        ("Oak", 200, 365),
-        ("Cactus", 5, 90),
-        ("Sunflower", 80, 45),
-        ("Fern", 15, 120)
-    ]
-
-    created_plants = []
-
+def start_factory() -> None:
     print("=== Plant Factory Output ===")
 
-    for i in range(len(plant_data)):
-        name, height, age = plant_data[i]
+    garden: List[Plant] = [
+        Plant("Rose", 25.0, 30),
+        Plant("Oak", 200.0, 365),
+        Plant("Cactus", 5.0, 90),
+        Plant("Sunflower", 80.0, 45),
+        Plant("Fern", 15.0, 120)
+    ]
 
-        n_plant = Plant(name, height, age)
-        created_plants.append(n_plant)
-
-        print(f"Created: {n_plant.name} "
-              f"({n_plant.height}cm, {n_plant.age} days)")
-
-    print(f"\nTotal plants created: {len(created_plants)}")
+    for i in range(len(garden)):
+        garden[i].show()
 
 
 if __name__ == "__main__":
-    ft_plant_factory()
+    start_factory()

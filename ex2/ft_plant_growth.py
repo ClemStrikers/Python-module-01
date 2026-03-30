@@ -1,40 +1,44 @@
 class Plant:
-    def __init__(self, name: str, height: int, age: int):
-        self.name = name
-        self.height = height
-        self.age = age
 
-    def grow(self, cm: int):
-        self.height += cm
+    def __init__(self, name: str, height: float, age_days: int) -> None:
+        self.name: str = name
+        self.height: float = height
+        self.age_days: int = age_days
+        self.growth_rate: float = 0.5
 
-    def age_one_day(self):
-        self.age += 1
+    def grow(self) -> None:
+        self.height += self.growth_rate
 
-    def get_info(self) -> str:
-        return f"{self.name}: {self.height}cm, {self.age} days old"
+    def age(self) -> None:
+        self.age_days += 1
+
+    def show(self) -> None:
+        current_height: float = round(self.height, 1)
+        print(f"{self.name}: {current_height}cm, {self.age_days} days old")
 
 
-def simulate_week(plants):
-    print("=== Day 1 ===")
-    for p in plants:
-        print(p.get_info())
+class Rose(Plant):
 
-    initial_heights = [p.height for p in plants]
+    def __init__(self, name: str, height: float, age_days: int) -> None:
 
-    for _ in range(6):
-        for p in plants:
-            p.grow(1)
-            p.age_one_day()
+        super().__init__(name, height, age_days)
+        self.growth_rate = 0.8
 
-    print("=== Day 7 ===")
-    for i in range(len(plants)):
-        p = plants[i]
-        print(p.get_info())
-        growth = p.height - initial_heights[i]
-        print(f"Growth this week: +{growth}cm")
+
+def run_simulation() -> None:
+    rose: Rose = Rose("Rose", 25.0, 30)
+    initial_height: float = rose.height
+
+    print("=== Garden Plant Growth ===")
+
+    for day in range(1, 8):
+        print(f"=== Day {day} ===")
+        rose.show()
+        rose.grow()
+        rose.age()
+    total_increase: float = rose.height - initial_height
+    print(f"Growth this week: {round(total_increase)}cm")
 
 
 if __name__ == "__main__":
-    rose = Plant("Rose", 25, 30)
-    my_garden = [rose]
-    simulate_week(my_garden)
+    run_simulation()
