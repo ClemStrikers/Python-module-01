@@ -82,13 +82,13 @@ def run_garden_simulation() -> None:
     rose.bloom()
     rose.show()
 
-    print("=== Tree")
+    print("\n=== Tree")
     oak: Tree = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     print("[asking the oak to produce shade]")
     oak.produce_shade()
 
-    print("=== Vegetable")
+    print("\n=== Vegetable")
     tomato: Vegetable = Vegetable("Tomato", 5.0, 10, "April")
     tomato.show()
     print("[make tomato grow and age for 20 days]")
