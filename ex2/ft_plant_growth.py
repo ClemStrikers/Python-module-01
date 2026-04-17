@@ -30,12 +30,13 @@ def run_simulation() -> None:
     initial_height: float = rose.height
 
     print("=== Garden Plant Growth ===")
+    rose.show()
 
     for day in range(1, 8):
         print(f"=== Day {day} ===")
-        rose.show()
         rose.grow()
         rose.age()
+        rose.show()
     total_increase: float = rose.height - initial_height
     print(f"Growth this week: {round(total_increase)}cm")
 
