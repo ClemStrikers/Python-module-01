@@ -140,9 +140,7 @@ def main() -> None:
     print(f"Is 400 days more than a year?-> "
           f"{Plant.is_older_than_a_year(400)}")
 
-    print("Object-Oriented Garden Systems")
-
-    print("=== Flower")
+    print("\n=== Flower")
     rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
     display_statistics(rose)
@@ -154,7 +152,7 @@ def main() -> None:
     rose.show()
     display_statistics(rose)
 
-    print("=== Tree")
+    print("\n=== Tree")
     oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     display_statistics(oak)
@@ -163,7 +161,7 @@ def main() -> None:
     oak.produce_shade()
     display_statistics(oak)
 
-    print("=== Seed")
+    print("\n=== Seed")
     sunflower = Seed("Sunflower", 80.0, 45, "yellow")
     sunflower.show()
 
@@ -177,7 +175,7 @@ def main() -> None:
     sunflower.show()
     display_statistics(sunflower)
 
-    print("=== Anonymous")
+    print("\n=== Anonymous")
     anon = Plant.create_anonymous()
     anon.show()
     display_statistics(anon)

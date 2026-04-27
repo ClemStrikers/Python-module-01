@@ -49,7 +49,7 @@ def run_security_check() -> None:
     print(f"Age updated: {rose.get_age()} days\n")
     rose.set_height(-5.0)
     rose.set_age(-1)
-    print("Current state: ", end="")
+    print("\nCurrent state: ", end="")
     rose.show()
 
 
